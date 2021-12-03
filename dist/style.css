@@ -1,0 +1,46 @@
+#header{
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    height: 43px;
+}
+
+.title {
+  text-align: left;
+  display: inline-block;
+  margin-top: 0;
+  margin-left: 0;
+}
+
+#ingredient {
+    text-align: left;
+    width: 20%;
+}
+
+.dataDiv {
+  background-color: lightgray;
+  text-align: center;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cityDiv {
+  display: grid;
+  position: relative;
+  background-color: orange;
+  text-align: center;
+  border-radius: 4px; 
+
+}
+
+
+
+.image {
+  
+  height: 200px;
+  width: 300px;
+  margin: 20px;
+}
