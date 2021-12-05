@@ -2,7 +2,7 @@ const express = require('express')
 const moment = require('moment')
 const urllib = require('urllib')
 const router = express.Router()
-const City = require('./models/City')
+const City = require('../../models/City')
 const API_KEY = "15c3e05f5ebc08478d4946e9dc5e36b1"
 // const apiCall = `api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`
 
