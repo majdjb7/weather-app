@@ -16,6 +16,6 @@ let port = 3000
 
 app.use('/', api)
 
-app.listen(port, function(request, response){
+app.listen(process.env.PORT || port, function(request, response){
     console.log(`Server is up and running smoothly`)
 })
