@@ -18,11 +18,12 @@ router.get('/city', function(req, res) {
     urllib.request(`api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`, function (request, response) {
         let cityData = JSON.parse(response)
         // console.log(cityData)
+        // temperatureCelsius = ((5*(cityData.main.temp - 32))/9)
         city1 = new City({
                  name: cityName,
                  temperature: cityData.main.temp,
                  condition: cityData.weather[0].main,
-                 conditionPic: cityData.weather[0].icon
+                 conditionPic: `http://openweathermap.org/img/wn/${cityData.weather[0].icon}@2x.png`
         })
         // city1.save()
         res.send(city1)
@@ -38,21 +39,17 @@ router.get('/cities', function(req, res) {
 // ********************************************************************************************************
 router.post('/city', function(req, res) {
     // let cityName = req.query.cityName
-    let cityName = req.body.cityName
-    console.log("TO ADD: ", cityName)
-
-    // urllib.request(`api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`, function (request, response) {
-    //     let cityData = JSON.parse(response)
-    //     console.log(cityData)
-    //     let city1 = new City({
-    //              name: cityName,
-    //              temperature: cityData.main.temp,
-    //              condition: cityData.weather[0].main,
-    //              conditionPic: cityData.weather[0].icon
-    //     })
+    let cityName = req.body
+    console.log(cityName)
+    let city1 = new City({
+                     name: cityName.name,
+                     temperature: cityName.temperature,
+                     condition: cityName.condition,
+                     conditionPic: cityName.conditionPic
+            })
+    
     city1.save()
     res.send(city1)
-    // })
 })
 // ********************************************************************************************************
 router.delete('/city', function(req, res) {

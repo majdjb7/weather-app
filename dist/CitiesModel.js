@@ -3,11 +3,6 @@ class CitiesModel{
         this.cityData = []
     }
 
-    // getDataFromDB() {
-    //     $.get(`cities/`, function (response) {
-    //         this.cityData = response
-    //       });
-    // }
     getDataFromDB = async function () {
         this.cityData = await $.get(`cities/`)
     }
@@ -22,21 +17,8 @@ class CitiesModel{
 
 
     saveCity(cityToSave) {
-    //     $.ajax({
-    //         url : `city`,
-    //         method : 'post',
-    //         data : {
-    //            cityName: cityToSave
-    //         }
-    //    })
-
-
         $.post('city/', cityToSave, function(response) {
-            // response.send(cityToSave)
         })
-        // .then(
-        //     this.getDataFromDB()
-        // )
     }
 
     removeCity(cityToRemove) {
@@ -47,10 +29,5 @@ class CitiesModel{
                cityName: cityToRemove
             }
        })
-        // $.delete('city/', cityToRemove, function(response) {
-        //     response.send(cityToRemove)
-        // }).then(
-        //     getDataFromDB()
-        // )
     }
 }

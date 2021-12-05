@@ -13,7 +13,6 @@
     <div id="inputs">
         <input type="text" placeholder="Enter City Name" id="city">
         <button id="submit">Search</button>
-        <button id="save">Save</button>
 
         
     </div>
@@ -33,7 +32,9 @@
                 <p class="name">{{ name }}</p>
                 <p class="temperature">Temperature: {{ temperature }}</p>
                 <p class="condition">Condition: {{ condition }}</p>
-                <p class="conditionPic">ConditionPic: {{ conditionPic }}</p>
+                <img src={{conditionPic}} class="conditionPic">
+                <button class="save">Save</button>
+
 
             </div>
         {{/each}}

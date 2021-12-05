@@ -34,10 +34,19 @@ $("#save").on("click", function() {
 })
 
 $("body").on("click", ".save", function() {
-    let cityName = $("#city").val()
-    let cityNameObj = {"cityName": cityName}
-    citiesModel.saveCity(cityName)
-    render.renderResults();
+    let cityNameToAdd = $(this).closest('.cityDiv').find('.name')[0].innerHTML
+    let cityTemperatureToAdd = $(this).closest('.cityDiv').find('.temperature')[0].innerHTML
+    let cityConditionToAdd = $(this).closest('.cityDiv').find('.condition')[0].innerHTML
+    let cityIconToAdd = $(this).closest('.cityDiv').find('.conditionPic')[0].src
+
+    let cityObject = {
+                name: cityNameToAdd,
+                temperature: cityTemperatureToAdd.slice(13),
+                condition: cityConditionToAdd.slice(11),
+                conditionPic: cityIconToAdd
+    }
+    citiesModel.saveCity(cityObject)
+    // render.renderResults();
 
 })
 
@@ -48,7 +57,7 @@ $("body").on("click", ".delete", function() {
 
     setTimeout(function() {
         render.renderResults();
-      }, 3000);
+      }, 1000);
       ;
     // let cityName = $("#city").val()
     // let cityNameObj = {"cityName": cityName}
