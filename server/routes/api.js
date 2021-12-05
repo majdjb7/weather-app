@@ -7,7 +7,7 @@ const API_KEY = "15c3e05f5ebc08478d4946e9dc5e36b1"
 // const apiCall = `api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`
 
 const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost/weatherDB', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URL||'mongodb://localhost/weatherDB', { useNewUrlParser: true })
 
 let city1
 // ********************************************************************************************************
