@@ -10,7 +10,6 @@ class CitiesModel{
     async getCityData(cityName) {
         return $.get(`city/?cityName=${cityName}`, function (response) {
           }).then(response => {
-              console.log(response)
               let city = response
               this.cityData.push(city)
           });
