@@ -1,46 +1,80 @@
-#header{
-  text-align: center;
-  background-color: black;
-  color: white;
-  font-size: 30px;
-  font-weight: bold;
-  height: 43px;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/1.2/css/weather-icons.min.css);
+
+body {
+	background: linear-gradient(90deg, #7474BF 10%, #348AC7 90%);
+}
+#weather_wrapper{
+	width: 400px;
+	margin: 100px auto;
+}
+.weatherCard{
+	width: 400px;
+	height: 200px;
+	font-family: 'Open Sans';
+	position: relative;
+    margin: 10px;
+}
+.currentTemp{
+	width: 220px;
+	height: 200px;
+	background: rgb(41, 41, 41);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.currentWeather{
+	width: 180px;
+	height: 200px;
+	background: rgb(172, 170, 170);
+	margin: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.temp{
+	font-size: 80px;
+	text-align: center;
+	display: block;
+	font-weight: 300;
+	color: rgb(255, 255, 255);
+	padding: 20px 0 0;
+}
+.location{
+	color: rgb(255, 255, 255);
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 30px;
+	display: block;
+}
+.conditions{
+	font-family: weathericons;
+	font-size: 80px;
+	display: block;
+	padding: 20px 0 0;
+	text-align: center;
+}
+.info{
+	width: 180px;
+	height: 50px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background: rgb(42, 178, 234);
+	font-weight: 700;
+	color: rgb(255, 255, 255);
+	text-align: center;
+    align-content: center;
+}
+.condition {
+	width: 50%;
+	word-spacing: 60px;
+	top: 3px;
+    font-size: 28px;
 }
 
-.title {
-text-align: left;
-display: inline-block;
-margin-top: 0;
-margin-left: 0;
-}
-
-#ingredient {
-  text-align: left;
-  width: 20%;
-}
-
-.dataDiv {
-background-color: lightgray;
-text-align: center;
-display: grid;
-grid-gap: 10px;
-grid-template-columns: repeat(3, 1fr);
-}
-
-.cityDiv {
-display: grid;
-position: relative;
-background-color: orange;
-text-align: center;
-border-radius: 4px; 
-
-}
-
-
-
-.image {
-
-height: 200px;
-width: 300px;
-margin: 20px;
+.conditionPic {
+    height: 180px;
+    width: 180px;
 }
