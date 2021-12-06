@@ -11,18 +11,13 @@ loadPage()
 
 async function handleSearch(cityName) {
     await citiesModel.getCityData(cityName)
-
 }
 
-$("#submit").on("click", function() {
+$("body").on("click", "#submit", async function() {
     let cityName = $("#city").val()
-    handleSearch(cityName)
-    setTimeout(function() {
-        render.renderResults();
-      }, 500);
-      ;
-    
-
+    console.log(cityName)
+    await handleSearch(cityName)
+    render.renderResults();
 })
 
 $("body").on("click", ".save", function() {
@@ -44,8 +39,7 @@ $("body").on("click", ".delete", function() {
     let cityToDelete = $(this).closest('.currentTemp').find('.location')[0].innerHTML
     citiesModel.removeCity(cityToDelete)
     
-    setTimeout(function() {
+    
         render.renderResults();
-      }, 1000);
-      ;
+     
 })

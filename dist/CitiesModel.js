@@ -7,9 +7,10 @@ class CitiesModel{
         this.cityData = await $.get(`cities/`)
     }
 
-    getCityData(cityName) {
-        $.get(`city/?cityName=${cityName}`, function (response) {
+    async getCityData(cityName) {
+        return $.get(`city/?cityName=${cityName}`, function (response) {
           }).then(response => {
+              console.log(response)
               let city = response
               this.cityData.push(city)
           });
@@ -22,6 +23,7 @@ class CitiesModel{
     }
 
     removeCity(cityToRemove) {
+        // this.data.splice(cityToRemove)
         $.ajax({
             url : `city/?cityName=${cityToRemove}`,
             method : 'delete',
