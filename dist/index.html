@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>WeatherApp</title><link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <title>WeatherApp</title><link rel="stylesheet" type="text/css" media="screen" href="style2.css" />
 </head>
 
 <body>
@@ -24,19 +24,25 @@
 
 
     <script id="ingredients-template" type="text/x-handlebars-template">
-        <div class="dataDiv">
+        <div id="weather_wrapper">
         {{#each cities}}
-            <div class="cityDiv">
-                <!-- <button class="save">+ Save +</button> -->
-                <button class="delete">- Delete -</button>
-                <p class="name">{{ name }}</p>
-                <p class="temperature">Temperature: {{ temperature }}</p>
-                <p class="condition">Condition: {{ condition }}</p>
-                <img src={{conditionPic}} class="conditionPic">
-                <button class="save">Save</button>
-
+            <div class="weatherCard">
+                <div class="currentTemp">
+                    <!-- <button class="save">+ Save +</button> -->
+                    <button class="delete">- Delete -</button>
+                    <button class="save">Save</button>
+                    <span class="location">{{ name }}</span>
+                    <span class="temp">{{ temperature }}&deg</span>
+                </div>
+                <div class="currentWeather">
+                    <img src={{conditionPic}} class="conditionPic">
+                    <div class="info">
+                        <span class="condition">{{ condition }}</span>
+                    </div>
+                </div>
 
             </div>
+
         {{/each}}
         </div>
         <!-- <div class="dataDiv">
@@ -64,7 +70,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
     <script src="/CitiesModel.js"></script>
     <script src="/Renderer.js"></script>
-    <script src="/main.js"></script>
+    <script src="/controller.js"></script>
 
 </body>
 

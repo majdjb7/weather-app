@@ -18,10 +18,11 @@ router.get('/city', function(req, res) {
     urllib.request(`api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`, function (request, response) {
         let cityData = JSON.parse(response)
         // console.log(cityData)
-        // temperatureCelsius = ((5*(cityData.main.temp - 32))/9)
+        temperatureCelsius = parseInt(cityData.main.temp) - 273.15
+        
         city1 = new City({
                  name: cityName,
-                 temperature: cityData.main.temp,
+                 temperature: Math.round(temperatureCelsius).toFixed(2),
                  condition: cityData.weather[0].main,
                  conditionPic: `http://openweathermap.org/img/wn/${cityData.weather[0].icon}@2x.png`
         })
