@@ -5,6 +5,7 @@ async function loadPage() {
     render = new Renderer(citiesModel.cityData);
     console.log(citiesModel.cityData)
     render.renderResults();
+    $(".save").hide()
 }
 
 loadPage()
@@ -25,6 +26,9 @@ $("body").on("click", ".save", function() {
     let cityTemperatureToAdd = $(this).closest('.weatherCard').find('.temp')[0].innerHTML
     let cityConditionToAdd = $(this).closest('.weatherCard').find('.condition')[0].innerHTML
     let cityIconToAdd = $(this).closest('.weatherCard').find('.conditionPic')[0].src
+    // let deleteButton = $(this).closest('.weatherCard').find('.delete')
+    $(this).hide()
+    // console.log(deleteButton)
 
     let cityObject = {
                 name: cityNameToAdd,

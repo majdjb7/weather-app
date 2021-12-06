@@ -7,7 +7,6 @@ body {
 
   .container {
 	  text-align: center;
-	  /* display: flex; */
   }
   
   .heading {
@@ -124,4 +123,8 @@ body {
 .conditionPic {
     height: 180px;
     width: 180px;
+}
+
+.save {
+	display: hide;
 }
