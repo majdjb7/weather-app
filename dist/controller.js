@@ -32,7 +32,7 @@ $("body").on("click", ".save", function() {
 
     let cityObject = {
                 name: cityNameToAdd,
-                temperature: cityTemperatureToAdd.slice(0, -1),
+                temperature: cityTemperatureToAdd.slice(0, -2),
                 condition: cityConditionToAdd,
                 conditionPic: cityIconToAdd
     }
